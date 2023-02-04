@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {StyledEngineProvider} from '@mui/material/styles';
+import { StyledEngineProvider } from '@mui/material/styles';
 
 import Subjects from './components/Subjects';
 import NavBar from './components/NavBar';
@@ -25,12 +25,11 @@ export const PAGES = [
     {
         key: 'payments',
         title: 'Платежи'
-    },
+    }
 ];
 
 const App = () => {
-
-    const [ selectedPage, setSelectedPage ] = useState( PAGES[0].key );
+    const [selectedPage, setSelectedPage] = useState(PAGES[0].key);
 
     return (
         <StyledEngineProvider injectFirst>
@@ -40,12 +39,10 @@ const App = () => {
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />
-                {
-                    selectedPage === 'subjects' && <Subjects/>
-                }
+                {selectedPage === 'subjects' && <Subjects />}
             </div>
         </StyledEngineProvider>
     );
-}
+};
 
 export default App;
