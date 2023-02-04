@@ -34,5 +34,4 @@ build/
 .vscode/
 
 ### UI dependencies ###
-/src/main/web/package-lock.json
 /src/main/web/node_modules/
