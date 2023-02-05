@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { fetchJsonWithoutAuth } from './Utill.js';
+import Api from 'services/ApiService';
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 100 },
@@ -21,9 +21,9 @@ const Subjects = props => {
     useEffect(() => {
         if (!calledOnce.current) {
             calledOnce.current = true;
-            fetchJsonWithoutAuth('subjects')
+            Api.get('subjects')
                 .then(response => setData(response || []))
-                .catch(console.log);
+                .catch(error => console.error(error));
         }
     }, []);
 

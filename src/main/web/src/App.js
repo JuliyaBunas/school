@@ -33,7 +33,7 @@ const App = () => {
 
     return (
         <StyledEngineProvider injectFirst>
-            <div className="app-wrapper">
+            <div className="app">
                 <NavBar
                     pages={PAGES}
                     selectedPage={selectedPage}
